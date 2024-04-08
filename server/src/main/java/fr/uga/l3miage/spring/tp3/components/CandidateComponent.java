@@ -8,6 +8,7 @@ import fr.uga.l3miage.spring.tp3.repositories.CandidateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,9 @@ import java.util.stream.Collectors;
 public class CandidateComponent {
     private final CandidateEvaluationGridRepository candidateEvaluationGridRepository;
     private final CandidateRepository candidateRepository;
-
+    public Set<CandidateEntity> getAllCandidates() {
+        return new HashSet<>(candidateRepository.findAll());
+    }
     public Set<CandidateEntity> getAllEliminatedCandidate(){
         return candidateEvaluationGridRepository.findAllByGradeIsLessThanEqual(5)
                 .stream()

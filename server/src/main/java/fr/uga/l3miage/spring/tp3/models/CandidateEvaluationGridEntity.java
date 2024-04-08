@@ -33,4 +33,6 @@ public class CandidateEvaluationGridEntity {
 
     @ManyToMany
     private Set<EvaluationCriteriaEntity> evaluationCriteriaEntities;
+
+
 }

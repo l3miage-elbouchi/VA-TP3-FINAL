@@ -26,6 +26,7 @@ public class SessionService {
     private final SessionComponent sessionComponent;
 
     public SessionResponse createSession(SessionCreationRequest sessionCreationRequest){
+
         try {
             EcosSessionEntity ecosSessionEntity = sessionMapper.toEntity(sessionCreationRequest);
             EcosSessionProgrammationEntity programmation = sessionMapper.toEntity(sessionCreationRequest.getEcosSessionProgrammation());
